@@ -1,0 +1,107 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+.editar-articulo {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.atrass{
+  background-color: #45a049;
+  width: 100px;
+  height: 29px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin-top: 1%;
+  margin-left: -92%;
+}
+
+.editar-articulo h2 {
+  text-align: center;
+}
+
+.info-article {
+  width: 90%;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.co {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.co label {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+}
+
+.co input,
+.co select {
+  width: 270px;
+  height: 30px;
+  outline: none;
+  background-color: #ccc;
+  border: none;
+  border-radius: 3px;
+}
+
+.co textarea {
+  width: 250px;
+  height: 50px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 3px;
+  border: none;
+}
+
+.guardac{
+  display: block;
+  margin: 0 auto;
+  background-color:  #4caf50;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.guardac:hover{
+  background-color: #45a049;
+}
+
+/* responsive para moviles y tablets */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+  .atrass{
+    margin-left: 0px;
+  }
+
+  .info-article{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .co{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

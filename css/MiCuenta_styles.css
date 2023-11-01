@@ -1,0 +1,236 @@
+.container-cuenta{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* estilos de mis datos */
+#micuenta .container-cuenta aside{
+    display: flex;
+    width: 99%;
+}
+
+
+.container-micuenta{
+    width: 50%;
+}
+
+.container-datos{
+    width: 99%;
+}
+
+.datos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nom{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nom input{
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+}
+
+.ape{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ape input{
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+}
+
+#correo{
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+}
+
+.sing-off{
+    display: none;
+}
+
+.linea{
+    width: 2px;
+    background-color: rgb(185, 180, 180);
+    margin-right: 65px;
+}
+
+/* estilos de mis compras */
+.container-miscompras{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-miscompras{
+    width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cerrar-sesion{
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 3px;
+    color: #fff;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(237,137,137,1) 0%, rgba(245,103,103,1) 39%, rgba(247,52,52,1) 100%);
+}
+
+.cerrar-sesion:hover{
+    font-weight: bold;
+}
+
+#micuenta .container-article{
+    width: 90%;
+    height: 350px;
+    overflow-y: auto;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#micuenta .container-article article{
+    border-radius: 3px;
+    background-color: whitesmoke;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+#micuenta .container-article article img{
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.container-article article p{
+    margin-bottom: 0px;
+}
+
+.info-pedido{
+    display: flex;
+    justify-content: space-around;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(252,250,252,1) 20%, rgba(207,207,207,1) 100%);
+}
+
+/* estilos de mis cotizaciones */
+.container-miscotizaciones{
+    padding: 20px;
+}
+
+.info-cotizacion{
+    width: 99%;
+    min-height: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-cotizacion article{
+    width: 320px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.info-cotizacion img{
+    width: 200px;
+    border-radius: 3px;
+}
+
+.info-cotizacion p{
+    display: flex;
+    flex-wrap: wrap;
+}
+.info-cotizacion .btn-edit{
+    text-decoration: none;
+    padding: 8px 20px;
+    color: #000;
+    border-radius: 3px;
+    background-color: #4de240;
+}
+
+.btn-edit:hover{
+    background-color: #56f347;
+}
+
+/* responsive para moviles y tablets */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+
+    .container-cuenta aside{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-micuenta{
+        width: 99%;
+    }
+
+    .title-misdatos{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sing-off{
+        text-decoration: none;
+        padding: 5px 20px;
+        border-radius: 3px;
+        color: #fff;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(237,137,137,1) 0%, rgba(245,103,103,1) 39%, rgba(247,52,52,1) 100%);
+    }
+
+    .cerrar-sesion{
+        display: none;
+    }
+
+    .linea{
+        display: none;
+    }
+
+    .container-miscompras{
+        width: 99%;
+    }
+
+    .container-miscotizaciones{
+        height: 427px;
+    }
+
+    .info-cotizacion{
+        width: 100%;
+        height: 370px;
+        overflow-y: auto;
+    }
+
+    .info-cotizacion article{
+        width: 65%;
+    }
+
+    .info-cotizacion img{
+        width: 140px;
+    }
+}

@@ -1,0 +1,317 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+/* estilos del encabezado */
+header{
+    display: flex;
+    width: 100%;
+    height: 140px;
+    align-items: center;
+}
+
+header img{
+    width: 150px;
+    border-radius: 50%;
+    margin: 8px;
+}
+
+.container-header{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+/* estilos del nombre del admin y derrar sesion */
+.name{
+    display: flex;
+    width: 98%;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.name p{
+    margin-right: 40px;
+}
+
+.name a{
+    text-decoration: none;
+    padding: 0px 20px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(137, 237, 167) 0%, rgb(127, 245, 103) 39%, rgb(52, 247, 78) 100%);
+    border-radius: 3px;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.name img{
+    width: 20px;
+}
+
+.name a:hover{
+    scale: 1.03;
+}
+
+/* estilos de las pestañas de navegacion */
+.tab {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.tablinks-container{
+    width: 98%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tablinks{
+    border: 1px solid;
+    padding: 8px 80px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.tablinks:hover{
+    background-color: #F2F3F4;
+}
+
+/* estilos para todas las pestañas */
+.tab{
+    background-color: #ffff;
+    width: calc(100% - 20px);
+    height: calc(100% - 140px);
+    overflow-y: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* estilos de la pestaña de notificaciones */
+#notificaciones .container-cotizacion{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#notificaciones article{
+    width: 20%;
+    box-shadow: 0px 2px 4px rgba(169, 167, 196, 0.4);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    margin: 15px 20px;
+}
+
+#notificaciones img{
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#notificaciones p{
+    margin: 8px;
+}
+
+#notificaciones button{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(137, 237, 167) 0%, rgb(127, 245, 103) 39%, rgb(52, 247, 78) 100%);
+    border: none;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+/* estilos de la pestaña de articulos */
+#articulos .agregar-btn{
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(137, 237, 167) 0%, rgb(127, 245, 103) 39%, rgb(52, 247, 78) 100%);
+    padding: 8px 20px;
+    border-radius: 3px;
+    color: #000;
+}
+
+#articulos .container-articulos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#articulos article{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 10px;
+    margin: 15px 20px;
+    box-shadow: 0px 2px 4px rgba(129, 120, 247, 0.4);
+    border-radius: 5px;
+}
+
+#articulos img{
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#articulos p{
+    margin: 8px;
+}
+
+#articulos .btns{
+    display: flex;
+    justify-content: space-around;
+}
+
+#articulos .btns a{
+    text-decoration: none;
+    padding: 4px 30px;
+    background: #4792FF;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+}
+
+#articulos button{
+    border: none;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(237,137,137,1) 0%, rgba(245,103,103,1) 39%, rgba(247,52,52,1) 100%);
+    padding: 4px 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/* estilos de la pestañ de categorias */
+#categorias .btn-categoria{
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(137, 237, 167) 0%, rgb(127, 245, 103) 39%, rgb(52, 247, 78) 100%);
+    padding: 5px 20px;
+    border-radius: 3px;
+    color: #000;
+}
+
+#categorias .container-categorias{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#categorias main{
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(45, 33, 209, 0.4);
+    padding-bottom: 10px;
+}
+
+#categorias .botones{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#categorias .editarctgr{
+    text-decoration: none;
+    background-color: #4792FF;
+    padding: 4px 20px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+#categorias .eliminarctgr{
+    border: none;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(237,137,137,1) 0%, rgba(245,103,103,1) 39%, rgba(247,52,52,1) 100%);
+    border-radius: 3px;
+    padding: 4px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* responsive para pc */
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    #notificaciones article{
+        width: 28%;
+    }
+
+    #articulos article{
+        width: 28%;
+    }
+
+    #categorias main{
+        width: 20%;
+    }
+}
+
+/* responsive para moviles y tablets */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+    body{
+        height: 100vh;
+    }
+
+    header{
+        width: 100%;
+        padding: 0;
+        height: 100px;
+    }
+
+    header img{
+        width: 100px;
+        margin: 0;
+    }
+
+    .container-header{
+        width: calc(100% - 100px);
+    }
+
+    .name{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .name a{
+        padding: 3px 10px;
+        border-radius: 4px;
+    }
+
+    .tablinks-container{
+        width: 100%;
+        height: 30px;
+    }
+
+    .tablinks{
+        padding: 0px 14px;
+        font-size: 12px;
+    }
+
+    #notificaciones article{
+        width: 300px;
+    } 
+
+    #articulos article{
+        width: 300px;
+    }
+
+    #categorias main{
+        width: 300px;
+    }
+}

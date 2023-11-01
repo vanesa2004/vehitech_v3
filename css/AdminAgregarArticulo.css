@@ -1,0 +1,147 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+#formEditarArticulo {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 40px;
+  background-color: white;
+  border-radius: 4px;
+  margin: 0 auto;
+  }
+
+.atrass{
+  background-color: #45a049;
+  width: 100px;
+  height: 29px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin-left: -95%;
+}
+
+#formEditarArticulo h2 {
+  color: #333;
+  margin-bottom: 40px;
+}
+
+#formEditarArticulo .info-article{
+  width: 90%;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+#formEditarArticulo .info-article .co{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+#formEditarArticulo .info-article .co input[type="text"],
+#formEditarArticulo .info-article .co input[type="number"],
+#formEditarArticulo .info-article .co textarea{
+  width: 150px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+#formEditarArticulo .info-article .co select{
+  width: 150px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+  
+textarea {
+  height: 40px;
+}
+  
+input[type="file"] {
+  margin-top: 5px;
+}
+  
+#btnGuardar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  
+#btnGuardar:hover {
+  background-color: #45a049;
+}
+  
+  /* Estilos específicos */
+  #codigo {
+    width: 200px;
+  }
+  
+#precio,
+#cantidad {
+  width: 100px;
+}
+
+/* responsive para moviles y tablets */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+  body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+
+  #formEditarArticulo{
+    width: 90%;
+    padding: 0;
+    margin-top: 60px;
+  }
+
+  .atrass{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  #formEditarArticulo .info-article{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #formEditarArticulo .info-article .co{
+    width: 90%;
+  }
+
+  #formEditarArticulo .info-article .co input[type="text"],
+  #formEditarArticulo .info-article .co input[type="number"],
+  #formEditarArticulo .info-article .co textarea{
+  width: 85%;
+  }
+  
+}
+

@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+header img{
+    width: 150px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.container-general{
+    width: 85%;
+}
+
+/* para que no se vea la barra del menu para maviles t tablets */
+.menu{
+    display: none;
+}
+
+.btn-search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-search form{
+    border: 1px solid;
+    width: 40%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.btn-search input{
+    width: 90%;
+    height: 100%;
+    outline: none;
+    padding-left: 5px;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.btn-search input::placeholder{
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.btn-busqueda{
+    width: 47px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn a{
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid;
+    text-decoration: none;
+    color: #000;
+}
+
+.btn a:hover{
+    background-color:  #F2F3F4;
+}
+
+/* estilos de pestañas de navegacion */
+.tab {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.tablinks-container{
+    width: 99%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tablinks {
+    border: 1px solid;
+    color: #000;
+    text-decoration: none;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.tablinks:hover {
+    background-color: #F2F3F4;
+}
+
+.tab{
+    height: calc(100vh - 320px);
+    overflow-y: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* estilos del footer */
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* responsive para pc */
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+
+    .tab{
+        height: calc(100vh - 59px);
+    }
+
+}
+
+/* responsive para moviles y tablets */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+	body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    header {
+        width: 99%;
+        height: 85px;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+    }
+
+    header img{
+        width: 80px;
+    }
+
+    .btn-search{
+        width: 98%;
+        display: flex;
+        justify-content: space-around;
+        
+    }
+
+    .btn-search form{
+        width: 99%;
+    }
+
+    .btn-search form button{
+        display: flex;
+        align-items: center;
+    }
+
+    .btn-search form img{
+        width: 29px;
+    }
+
+    .btn{
+       display: none;
+    }
+
+    .menu{
+        display: flex;
+    }
+
+    .menu img{
+        width: 50px;
+    }
+
+    .tablinks-container{
+        display: none;
+    }
+
+    .tablinks{
+        width: 100px;
+    }
+
+    .cntnr-rds img{
+        width: 1px;
+    }
+
+    .img-redes{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img-redes a img{
+        width: 45px;
+    }
+
+    .tab{
+        margin-left: 0;
+        margin-right: 0;
+        height: 924px;
+        overflow-y: none;
+    }
+}
+

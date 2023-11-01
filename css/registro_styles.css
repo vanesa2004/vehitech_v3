@@ -1,0 +1,64 @@
+body{
+    height: 100vh;
+    margin: 0;
+}
+
+.container-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.form-registro{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.form-registro input[type="text"],
+input[type="number"],
+input[type="date"], 
+input[type="tel"],
+input[type="email"],
+input[type="password"], select{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    background-color: #F2F3F4;
+    border-radius: 2px;
+    padding-left: 8px;
+}
+
+.form-registro .btn-registro{
+    border: none;
+    padding: 8px 20px;
+    background-color: #4de240;
+    color: #000;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.btn-registro:hover{
+    background-color: #56f347;
+}
+
+/* responsive para moviles y tablets */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+    .container-form{
+        height: 600px;
+    }
+
+    .form-registro{
+        margin-top: 10px;
+        width: 78%;
+    }
+}
