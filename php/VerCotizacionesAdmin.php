@@ -13,7 +13,7 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<article>';
-            echo '<img src="../img/' . $row["foto"] . '" alt="foto">';
+            echo '<img src="../img/cotizaciones/' . $row["foto"] . '" alt="foto">';
             echo '<h3>' . $row["nombre_articulo"] . '</h3>';
             echo '<p>' . $row["descripcion"] . '</p>';
             echo '<p>' . $row["accion"] . '</p>';

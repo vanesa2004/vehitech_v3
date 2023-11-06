@@ -2,9 +2,14 @@
   session_start();
 
   // Verificar si la sesión está iniciada y si hay un nombre de usuario almacenado
-  if (isset($_SESSION['nombre'])) {
-    $nombreAdmin = $_SESSION['nombre'];
+  if (!isset($_SESSION['nombre'])) {
+    // El usuario no ha iniciado sesión, redirige a la página de inicio de sesión o muestra un mensaje de error
+    header("Location: login.php"); 
+    exit();
   }
+
+  // Ahora puedes continuar con el contenido de la página
+  $nombreAdmin = $_SESSION['nombre'];
 ?>
 
 <!DOCTYPE html>
