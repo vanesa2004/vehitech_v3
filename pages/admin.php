@@ -104,7 +104,7 @@
   </div> <!-- cierre de la etiqueta del contenido de catrgorias -->
 
   <!-- escript de la navegacion de pestañas -->
-  <script src="../js/NavegacionPestañas.js"></script>
+  <script src="../js/NavegacionPestanas.js"></script>
 
   <!-- escript para eliminar la cotizacion que ha realizado algun cliente -->
   <script src="../js/DescartarCotizacionAdm.js"></script>

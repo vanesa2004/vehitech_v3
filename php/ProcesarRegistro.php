@@ -27,7 +27,7 @@
         $contraseña_encriptada = password_hash($contraseña, PASSWORD_DEFAULT);
 
         // Preparar la consulta SQL para insertar los datos
-        $sql = "INSERT INTO usuarios (nombre, apellidos, documento, sexo, fecha_nacimiento, telefono, correo, contraseña, id_rol)
+        $sql = "INSERT INTO usuarios (nombre, apellidos, documento, sexo, fecha_nacimiento, telefono, correo, contrasena, id_rol)
                 VALUES ('$nombre', '$apellidos', '$num_doc', '$sexo', '$fecha_nacimiento', '$telefono', '$correo', '$contraseña_encriptada', '$rol')";
 
         // Ejecutar la consulta y verificar si se ha insertado correctamente

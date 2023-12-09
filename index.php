@@ -336,7 +336,7 @@
     </footer>
 
     <!-- enlace a script de navegacion -->
-  <script src="./js/NavegacionPestañas.js"></script>
+  <script src="./js/NavegacionPestanas.js"></script>
 
     <!-- script del slider -->
     <script src="./js/slider.js"></script>

@@ -15,7 +15,7 @@
         $usuario = $resultado->fetch_assoc();
 
         // Verificar la contraseña
-        if (password_verify($contraseña, $usuario['contraseña'])) {
+        if (password_verify($contraseña, $usuario['contrasena'])) {
             if ($usuario['id_rol'] == 1) {
                 $_SESSION['usuario_id'] = $usuario['id_usuario'];
                 $_SESSION['usuario_rol'] = 'administrador';
