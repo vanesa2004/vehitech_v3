@@ -15,7 +15,7 @@ header{
     justify-content:space-around;
 }
 
-header img{
+header .logovehitech{
     width: 150px;
     border-radius: 50%;
     margin: 5px;
@@ -96,6 +96,20 @@ header img{
     background-color:  #F2F3F4;
 }
 
+.num-car{
+    background-color: red;
+    border-radius: 100%;
+    width: 13px;
+    height: 13px;
+    color: #ffffff;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 10px;
+}
+
 /* estilos de pestañas de navegacion */
 .tab {
     display: none;
@@ -144,6 +158,11 @@ header img{
 footer{
     display: flex;
     justify-content: space-around;
+}
+
+footer img{
+    width: 50px;
+    margin-right: 5px;
 }
 
 /* responsive para pc */

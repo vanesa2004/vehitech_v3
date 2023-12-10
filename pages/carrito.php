@@ -38,6 +38,7 @@
 					</div>
 				</li>
 			</ul>
+
 		</section>
 		<section class="resumen">
 

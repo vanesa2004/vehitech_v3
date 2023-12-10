@@ -35,12 +35,14 @@
     <!-- estilos de la pestaña  cotizar -->
     <link rel="stylesheet" href="./css/MiCuenta_styles.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
 
     <header> <!--en la otra es un nav -->
         
-        <img src="img/logo.png" alt="">
+        <img class="logovehitech" src="img/logo.png" alt="">
 
         <div class="container-general">
 
@@ -55,7 +57,7 @@
                 </div>
     
                 <div class="btn">
-                    <a href="./pages/carrito.php">Carrito</a>
+                    <a href="./pages/carrito.php">Carrito <span class="num-car">2</span></a>
                     <a href="./pages/login.php">Iniciar sesión</a>
                     <a href="./pages/registro.php">Registrarse</a>
                     <p class="nombre"><?php echo isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] ? $nombreUsuario : ''; ?></p>
@@ -91,7 +93,7 @@
                     
                         include("php/UltimosArticulos.php");
 
-                    ?>
+                    ?>           
 
                 </div>
 
@@ -182,16 +184,24 @@
 	
 	<div id="articulos" class="tab">
 
-        <?php
-            include("./php/MostrarArticulosCliente.php");
-        ?>
+        <div class="container-article">
+
+            <?php
+
+                include("php/MostrarArticulosCliente.php");
+
+            ?>  
+
+        </div>
+
+        
                  
     </div>
 
     <div id="cotizar" class="tab">
 
         <div class="container-form">
-            <form class="form-cotizacion" action="./php/CotizacionCliente.php" method="POST"  enctype="multipart/form-data">
+            <form class="form-cotizacion" action="php/CotizacionCliente.php" method="POST"  enctype="multipart/form-data">
 
                 <h2>Cotizar artículo</h2>
 
@@ -328,9 +338,9 @@
         <div class="cntnr-rds">
             <h5>Redes Sociales</h5>
             <div class="img-redes">
-                <a href="https://es-la.facebook.com/"><img src="./img/facebook_.png" alt="facebook"></a>
-                <a href="https://www.instagram.com/"><img src="./img/instagram.png" alt="instagram"></a>
-                <a href="https://facebook.comweb.whatsapp.com"><img src="./img/watsap.png" alt="whatsapp"></a>
+                <a href="https://es-la.facebook.com/"><img src="img/facebook.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="img/instragram.svg" alt="instagram"></a>
+                <a href="https://facebook.comweb.whatsapp.com"><img src="img/whatsapp.svg" alt="whatsapp"></a>
             </div>
         </div>
     </footer>
@@ -344,7 +354,7 @@
     <!-- escript para redireccion a el login si el usuario no ha iniciado sesion para agregar al carrito -->
     <script src="./js/SesionCarrito.js"></script>
 
-    <script src="./js/AgregarArticulo.js"></script>
+
     
     
 </body>

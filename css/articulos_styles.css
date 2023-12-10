@@ -5,7 +5,9 @@
     justify-content: space-evenly;
     padding: 25px;
     overflow-y: auto;
+    width: 95%;
     height: 434px;
+
 }
 
 #articulos article{
@@ -57,6 +59,26 @@
 .btn-art:hover{
     scale: 1.1;
 }
+
+#mensaje {
+    display: none;
+    position: fixed;
+    right: 9%;
+    top: 4%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    z-index: 9999;
+    font-size: 16px;
+    opacity: 0; /* Inicialmente transparente */
+    transition: opacity 0.5s ease-in-out; /* Animación de transición de opacidad */
+  }
+  
+  #mensaje.mostrar {
+    display: block;
+    opacity: 1; /* Mostrar el mensaje */
+  }
 
 /* responsive para moviles  */
 @media only screen and (min-width: 360px) and (max-width: 768px) {
