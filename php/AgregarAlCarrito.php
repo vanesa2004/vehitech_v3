@@ -58,7 +58,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true) {
     }
 } else {
     // El usuario no está logueado, redirigir al login
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 

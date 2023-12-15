@@ -1,5 +1,10 @@
 <!-- Agrega un elemento div para mostrar el mensaje -->
 <div id="mensaje">Producto agregado al carrito</div>
+<div id="mensajeLogin" class="mensaje-login" style="display: none;">
+  <p>Para agregar productos al carrito, debes iniciar sesión.</p>
+  <button class="cancel" onclick="cancelar()">Cancelar</button>
+  <button class="acept" onclick="redireccionarALogin()">Aceptar</button>
+</div>
 
 <?php
 
@@ -22,7 +27,7 @@
       // Obtener la ruta de la imagen
       $rutaCompleta = $imagenProducto;
       $rutaImagen = "img/ArticulosCompraventa/";
-      $nombreImagen = explode("/", $rutaCompleta);
+      $nombreImagen = explode('/', $rutaCompleta);
       $nombreImagen = end($nombreImagen);
       $rutaImagen .= $nombreImagen;
 ?>
@@ -52,7 +57,7 @@
 
 <script>
 
-  // Función para mostrar el mensaje y ocultarlo después de un tiempo determinado
+    // Función para mostrar el mensaje y ocultarlo después de un tiempo determinado
   function mostrarMensaje() {
     var mensaje = document.getElementById('mensaje');
     mensaje.classList.add('mostrar'); // Agregar la clase 'mostrar' para hacer visible el mensaje
@@ -64,10 +69,20 @@
 
   // Función para agregar al carrito
   function agregarAlCarrito(idArticulo) {
+    // Verificar si el usuario ha iniciado sesión antes de agregar al carrito
+    var isLoggedIn = <?php echo isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true ? 'true' : 'false'; ?>;
+    
+    if (!isLoggedIn) {
+      // Mostrar el mensaje de iniciar sesión
+      var mensajeLogin = document.getElementById('mensajeLogin');
+      mensajeLogin.style.display = 'block';
+      return; // Detener la ejecución de la función si el usuario no ha iniciado sesión
+    }
+
     // Obtener la cantidad del producto
     var cantidad = document.getElementById('cantidad' + idArticulo).value;
 
-    // Realizar la solicitud AJAX
+    // Realizar la solicitud AJAX solo si el usuario ha iniciado sesión
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
@@ -80,9 +95,15 @@
     xhr.send("idArticulo=" + idArticulo + "&cantidad=" + cantidad);
   }
 
-  // Llamar a la función agregarAlCarrito() dentro del evento DOMContentLoaded (opcional)
-  document.addEventListener('DOMContentLoaded', function() {
-    // Tu código JavaScript adicional si es necesario
-  });
+  // Función para redireccionar al usuario a la página de inicio de sesión
+  function redireccionarALogin() {
+    window.location.href = 'pages/login.php';
+  }
+
+  // Función para ocultar el mensaje de inicio de sesión
+  function cancelar() {
+    var mensajeLogin  = document.getElementById('mensajeLogin');
+    mensajeLogin.style.display = 'none';
+  }
 
 </script>

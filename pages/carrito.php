@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="../css/carrito_styles.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -16,28 +17,58 @@
 
 		<section class="items">
 			<h2>Artículos en el carrito</h2>
-			<ul>
-				<li>
-					<img src="../img/XR150L.jpg" alt="Producto 1">
-					<div class="item-info">
-						<h3>Producto 1</h3>
-						<p class="price">$7.000.000</p>
-						<label for="cantidad-1">Cantidad:</label>
-						<input type="number" id="cantidad-1" name="cantidad-1" min="1" value="1">
-						<button class="cancelar" type="button">Cancelar</button>
-					</div>
-				</li>
-				<li>
-					<img src="https://picsum.photos/100" alt="Producto 3">
-						<div class="item-info">
-						<h3>Producto 3</h3>
-						<p class="price">$30.00</p>
-						<label for="cantidad-3">Cantidad:</label>
-						<input type="number" id="cantidad-3" name="cantidad-3" min="1" value="1">
-						<button class="cancelar">Cancelar</button>
-					</div>
-				</li>
+			<ul id="lista-productos-carrito">
+				<!-- Aquí se muestran los productos del carrito -->
 			</ul>
+
+			
+			<script>
+				// Llamada AJAX para obtener los productos del carrito
+				$.ajax({
+					url: '../php/MostrarCarrito.php',
+					type: 'GET',
+					dataType: 'json',
+					success: function(response) {
+						if (response.length > 0) {
+							var listaProductos = $('#lista-productos-carrito');
+
+							response.forEach(function(producto) {
+								var item = `<li>
+												<img src="${producto.imagen}" alt="${producto.nombre}">
+												<div class="item-info">
+													<h3>${producto.nombre_articulo}</h3>
+													<p class="price">$${producto.precio}</p>
+													<label for="cantidad-${producto.id_articulo}">Cantidad:</label>
+													<input type="number" id="cantidad-${producto.id_articulo}" name="cantidad-${producto.id_articulo}" min="1" value="${producto.cantidad}">
+													<button class="cancelar">Cancelar</button>
+												</div>
+											</li>`;
+								listaProductos.append(item);
+
+								// Código para manejar cambios en la cantidad del producto
+								$('#cantidad-' + producto.id_articulo).on('change', function() {
+									var idArticulo = producto.id_articulo;
+									var nuevaCantidad = $(this).val();
+
+									// Validar si los datos son numéricos
+									if (!$.isNumeric(idArticulo) || !$.isNumeric(nuevaCantidad)) {
+										console.error('Datos no válidos');
+										return;
+									}
+
+									// Llamar a la función para actualizar la cantidad
+									actualizarCantidad(idArticulo, nuevaCantidad);
+								});
+							});
+						} else {
+							$('#lista-productos-carrito').html('<p>No hay productos en el carrito</p>');
+						}
+					},
+					error: function(xhr, status, error) {
+						console.error(error);
+					}
+				});
+				</script>
 
 		</section>
 		<section class="resumen">

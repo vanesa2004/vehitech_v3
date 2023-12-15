@@ -79,6 +79,45 @@
     display: block;
     opacity: 1; /* Mostrar el mensaje */
   }
+  
+  #mensajelogin.mostrar {
+    display: block;
+    opacity: 1; /* Mostrar el mensaje */
+  }
+
+   .mensaje-login button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  /* Estilos para el mensaje de iniciar sesión */
+  #mensajeLogin {
+    display: none;
+    padding: 10px;
+    background-color: #f3f1f1; /* Color de fondo del mensaje */
+    color: #000; /* Color del texto */
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: fixed;
+    width: 30%;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    top: 40%;
+  }
+
+  .cancel{
+    background-color: red;
+  }
+
+  .acept{
+    background-color: #4CAF50;
+  }
 
 /* responsive para moviles  */
 @media only screen and (min-width: 360px) and (max-width: 768px) {

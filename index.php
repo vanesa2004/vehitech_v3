@@ -120,23 +120,23 @@
 
                         <!--inicio imagenes slider-->
                         <div class="slide first">
-                            <img src="./img/moto.jpg" alt="">
+                            <img src="img/moto.jpg" alt="">
                         </div>
 
                         <div class="slide">
-                            <img src="./img/sedan-plateado.jpg" alt="">
+                            <img src="img/sedan-plateado.jpg" alt="">
                         </div>
 
                         <div class="slide">
-                            <img src="./img/portatil.jpg" alt="">
+                            <img src="img/portatil.jpg" alt="">
                         </div>
 
                         <div class="slide"> 
-                            <img src="./img/celular.jpg" alt="">
+                            <img src="img/celular.jpg" alt="">
                         </div>
 
                         <div class="slide">
-                            <img src="./img/electrodomesticos.jpg" alt="">
+                            <img src="img/electrodomesticos.jpg" alt="">
                         </div>
                         <!--final imagenes slider-->
 
@@ -173,7 +173,7 @@
             <div class="categorias">
 
                 <?php
-                    include("./php/MostrarCategoriasCliente.php");
+                    include("php/MostrarCategoriasCliente.php");
                 ?>
                 
             </div>
@@ -307,7 +307,7 @@
                 <div class="info-cotizacion">
 
                     <?php
-                        include("./php/HistorialCotizaciones.php");
+                        include("php/HistorialCotizaciones.php");
                     ?>
     
                 </div>
@@ -346,13 +346,13 @@
     </footer>
 
     <!-- enlace a script de navegacion -->
-  <script src="./js/NavegacionPestanas.js"></script>
+    <script src="js/NavegacionPestanas.js"></script>
 
     <!-- script del slider -->
-    <script src="./js/slider.js"></script>
+    <script src="js/slider.js"></script>
 
     <!-- escript para redireccion a el login si el usuario no ha iniciado sesion para agregar al carrito -->
-    <script src="./js/SesionCarrito.js"></script>
+    <script src="js/SesionCarrito.js"></script>
 
 
     
