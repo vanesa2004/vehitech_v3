@@ -1,34 +1,38 @@
 <?php
+
     session_start();
     include("conexion_bd.php");
 
-    
-    // Mostrar la información de $_POST en la consola del navegador
-    header('Content-Type: application/json');
-    echo json_encode($_POST);
+    // Verificar si se reciben los datos esperados para actualizar la cantidad
+    if (isset($_POST['id_articulo']) && isset($_POST['cantidad'])) {
+        $idArticulo = $_POST['id_articulo'];
+        $nuevaCantidad = $_POST['cantidad'];
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true) {
-        $idUsuario = $_SESSION['usuario_id'];
+        // Actualizar la cantidad del producto en la tabla carrito
+        $stmt = $conn->prepare("UPDATE carrito SET cantidad = ? WHERE id_articulo = ?");
+        $stmt->bind_param("ii", $nuevaCantidad, $idArticulo);
 
-        if (isset($_POST['idArticulo']) && isset($_POST['nuevaCantidad'])) {
-            $idArticulo = $_POST['idArticulo'];
-            $nuevaCantidad = $_POST['nuevaCantidad'];
-
-            // Actualizar la cantidad del artículo en el carrito para el usuario actual
-            $queryUpdate = "UPDATE carrito SET cantidad = '$nuevaCantidad' 
-                            WHERE id_usuario = '$idUsuario' AND id_articulo = '$idArticulo'";
-
-            if ($conn->query($queryUpdate) === TRUE) {
-                echo json_encode(array('success' => true));
-            } else {
-                echo json_encode(array('success' => false, 'error' => 'Error al actualizar la cantidad: ' . $conn->error));
-            }
+        if ($stmt->execute()) {
+            // Si la actualización de la cantidad es exitosa, se procede a calcular y actualizar el total del carrito
+            calcularYActualizarTotal($conn);
         } else {
-            echo json_encode(array('success' => false, 'error' => 'Datos incompletos'));
+            echo json_encode(array("success" => false, "error" => "Error al actualizar la cantidad: " . $conn->error));
         }
     } else {
-        echo json_encode(array('success' => false, 'error' => 'Acceso no autorizado'));
+        echo json_encode(array("success" => false, "error" => "Datos incompletos"));
     }
 
-    $conn->close();
+    function calcularYActualizarTotal($conn) {
+        // Actualizar el campo 'total' en la tabla 'carrito' basado en el cálculo de precio por cantidad
+        $sqlUpdateTotal = "UPDATE carrito AS c
+                        INNER JOIN articulos AS a ON c.id_articulo = a.id_articulo
+                        SET c.total = a.precio * c.cantidad";
+
+        if ($conn->query($sqlUpdateTotal) === TRUE) {
+            echo json_encode(array("success" => true));
+        } else {
+            echo json_encode(array("success" => false, "error" => "Error al calcular y actualizar el total del carrito: " . $conn->error));
+        }
+    }
+
 ?>
